@@ -14,18 +14,20 @@ yarn expo prebuild --platform ios
 ## Etapa 1 (Criações das pontes):
 
 Vamos abrir a pasta ios pelo xcode.\
-Ao abrir é de extrema importando deixar a IDE indexar por completo o projeto:
+Ao abrir é de extrema importância deixar a IDE indexar por completo o projeto:
 ![1](https://i.imgur.com/TyNEYCN.png)
 
 Vamos criar dois arquivos na pasta myapp:\
 myapp (projeto) > myapp (pasta) > (clica no botão direito) > New File from Template..
 
-Primeiro vamos criar o arquivo "MatchesLiveModule" selecionando o "Swift File"
+Primeiro vamos criar o arquivo "MatchesLiveModule" selecionando o "Swift File"\
+Ele vai servir como se fosse um ciclo de vida do Widget, onde você vai inicializar, atualizar o estado e finalizar.
 ![2](https://i.imgur.com/R653l0j.png)
 
 ![3](https://i.imgur.com/XkllSzq.png)
 
-Agora vamos criar o arquivo "MatchesLiveHeader" selecionando o "Objective-C File"
+Agora vamos criar o arquivo "MatchesLiveHeader" selecionando o "Objective-C File"\
+Ele é responsável em fazer a ponte da comunicação do React Native com o nativo.
 ![4](https://i.imgur.com/LbWDDtk.png)
 
 ## Etapa 2 (Configuração):
@@ -43,7 +45,7 @@ Selecione a opção "Widget Extension" e clique em "Next"
 ![7](https://i.imgur.com/170HOOQ.png)
 
 Vamos deixar apenas a primeira opção marcada e por o nome de "MatchesLive".\
-Fazendo isso vai abrir um modal pergutando se deseja ativar o scheme, então vamos clicar em "Activate"
+Fazendo isso vai abrir um modal perguntando se deseja ativar o scheme, então vamos clicar em "Activate"
 ![8](https://i.imgur.com/HmeVjjf.png)
 
 ![9](https://i.imgur.com/RSYqFKo.png)
@@ -51,15 +53,15 @@ Fazendo isso vai abrir um modal pergutando se deseja ativar o scheme, então vam
 Finalizando tudo isso, sua estrutura estará assim:
 ![10](https://i.imgur.com/EyuOT0Z.png)
 
-## Etapa 4 (Configuração finais):
+## Etapa 4 (Configurações finais):
 
-Algo muito importando que você precisa se atentar é clicar no arquivo "MatchesLiveLiveActivity" e verificar o "Target Membership" que fica na barra direita\
+Algo muito importante que você precisa se atentar é clicar no arquivo "MatchesLiveLiveActivity" e verificar o "Target Membership" que fica na barra direita.\
 Pois provavelmente só deve estar selecionado o seu Target, então vamos clicar no icone de "+" e selcionar o seu projeto também e salvar
 ![11](https://i.imgur.com/yonDnmT.png)
 
 Fazemos isso para que seu arquivo criado lá na etapa 1, o "MatchesLiveModule" tenha visibilidade do seu Target.
 
-Agora vamos adicioinar 3 imagens no nosso Target para que possamos usar no nosso Widget
+Agora vamos adicionar 3 imagens no nosso Target para que possamos usar no nosso Widget
 ![12](https://i.imgur.com/kmeJsfn.png)
 
 ## Etapa 5 (Consideração final):
@@ -69,13 +71,13 @@ Antes de rodar o projeto, não esqueça de selecionar o projeto
 
 ## Etapa 6 (Copiar e colar):
 
-Com a permissão data e estrutua criada, vamos adicionar os códigos de fato e honestamente, chega de mais imagens, agora você irá na pasta ios desse projeto e irá copiar e colar os códigos dos arquivos para seu projeto com os arquivos correspondentes e pronto, é só rodar.\
-Os aquivos que você irá copiar e colar são:
+Com a permissão e estrutua criada, vamos adicionar os códigos de fato e honestamente, chega de mais imagens, agora você irá na pasta ios desse projeto e irá copiar e colar os códigos dos arquivos para seu projeto com os arquivos correspondentes e pronto, é só rodar.\
+Os códigos que você irá copiar e colar estão nos arquivos:
 - MatchesLiveHeader.m
 - MatchesLiveModule.swift
 - MatchesLiveLiveActivity.swift
 - MatchesLiveBundle.swift
-- App.tsx
+- App.tsx (do projeto expo)
 
 Você deve estar se perguntando: Pô, mas não vai explicar ao menos um pouco do código?\
 Sobre isso, relaxa, eu adicionei comentários em determinados trechos explicando o que cada coisa faz.
@@ -87,5 +89,5 @@ cd ios
 pod install
 ```
 
-Para conhecer mais sobre essa feature do iOS, você ler essa documentação da Apple:\
+Para conhecer mais sobre essa feature do iOS, você pode ler essa documentação da Apple:\
 https://developer.apple.com/documentation/activitykit/displaying-live-data-with-live-activities
